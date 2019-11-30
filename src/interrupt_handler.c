@@ -77,8 +77,8 @@ void portD1IntHandler(void)
 {
     static uint32_t kmCounter = 0;
     TimerDisable(TIMER0_BASE, TIMER_A);             // stop timer 0
-    velocity = timerScaler / TIMER0_TAV_R;   // read and transform measured time
-    TIMER0_TAV_R = 0;             // reset timer 0
+    velocity = timerScaler / TIMER0_TAV_R;         // read and transform measured time
+    TIMER0_TAV_R = 0;                  // reset timer 0
     TimerEnable(TIMER0_BASE, TIMER_A);             // start timer 0 again
     GPIOIntClear(GPIO_PORTD_AHB_BASE, GPIO_PIN_1);       // clear edge interrupt
 //get movement direction

@@ -1,1 +1,1 @@
-"./tm4c1294ncpdt_startup_ccs.obj" "./src/init_LCD.obj" "./src/init_peripherals.obj" "./src/interrupt_handler.obj" "./src/lcd_write.obj" "./src/mc_project_main.obj" "../tm4c1294ncpdt.cmd" -llibc.a -l"C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib" 
+"./src/init_LCD.obj" "./src/init_peripherals.obj" "./src/interrupt_handler.obj" "./src/lcd_write.obj" "./src/mc_project_main.obj" "./src/tm4c1294ncpdt_startup_ccs.obj" "../tm4c1294ncpdt.cmd" -llibc.a -l"C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib" 

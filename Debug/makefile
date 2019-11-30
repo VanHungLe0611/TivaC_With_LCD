@@ -10,12 +10,12 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./tm4c1294ncpdt_startup_ccs.obj" \
 "./src/init_LCD.obj" \
 "./src/init_peripherals.obj" \
 "./src/interrupt_handler.obj" \
 "./src/lcd_write.obj" \
 "./src/mc_project_main.obj" \
+"./src/tm4c1294ncpdt_startup_ccs.obj" \
 "../tm4c1294ncpdt.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -147,7 +147,7 @@ all: MC_Lab_LCD-master.out
 MC_Lab_LCD-master.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C1294NCPDT --gcc --abi=eabi -z -m"app_TM4C1294NCPDT_ccs.map" --heap_size=5000 --stack_size=5120 -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/lib" -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/include" --reread_libs --warn_sections --rom_model -o "MC_Lab_LCD-master.out" $(ORDERED_OBJS)
+	"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power="9,10.1" --define=ccs="ccs" --define=PART_TM4C1294NCPDT --gcc --abi=eabi -z -m"app_TM4C1294NCPDT_ccs.map" --heap_size=5000 --stack_size=5120 -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/lib" -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-arm_18.12.3.LTS/include" --reread_libs --warn_sections --rom_model -o "MC_Lab_LCD-master.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -161,8 +161,8 @@ MC_Lab_LCD-master.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "tm4c1294ncpdt_startup_ccs.obj" "src\init_LCD.obj" "src\init_peripherals.obj" "src\interrupt_handler.obj" "src\lcd_write.obj" "src\mc_project_main.obj" 
-	-$(RM) "tm4c1294ncpdt_startup_ccs.d" "src\init_LCD.d" "src\init_peripherals.d" "src\interrupt_handler.d" "src\lcd_write.d" "src\mc_project_main.d" 
+	-$(RM) "src\init_LCD.obj" "src\init_peripherals.obj" "src\interrupt_handler.obj" "src\lcd_write.obj" "src\mc_project_main.obj" "src\tm4c1294ncpdt_startup_ccs.obj" 
+	-$(RM) "src\init_LCD.d" "src\init_peripherals.d" "src\interrupt_handler.d" "src\lcd_write.d" "src\mc_project_main.d" "src\tm4c1294ncpdt_startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

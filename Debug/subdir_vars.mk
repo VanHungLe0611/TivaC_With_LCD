@@ -8,22 +8,4 @@ SHELL = cmd.exe
 CMD_SRCS += \
 ../tm4c1294ncpdt.cmd 
 
-C_SRCS += \
-../tm4c1294ncpdt_startup_ccs.c 
-
-C_DEPS += \
-./tm4c1294ncpdt_startup_ccs.d 
-
-OBJS += \
-./tm4c1294ncpdt_startup_ccs.obj 
-
-OBJS__QUOTED += \
-"tm4c1294ncpdt_startup_ccs.obj" 
-
-C_DEPS__QUOTED += \
-"tm4c1294ncpdt_startup_ccs.d" 
-
-C_SRCS__QUOTED += \
-"../tm4c1294ncpdt_startup_ccs.c" 
-
 

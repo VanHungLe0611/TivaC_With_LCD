@@ -11,7 +11,7 @@
 #include "driverlib/systick.h"
 #include "driverlib/timer.h"
 
-// define LCD data format: BIT16: 1x16bit, BIT24: 3x8bit
+//define LCD data format: BIT16: 1x16bit, BIT24: 3x8bit
 //#define BIT16 1
 #define BIT24 2
 
@@ -81,9 +81,14 @@ void darstellung_tacho(void);
 void darstellung_display(void);
 
 // interrupt handler
-void Timer2IntHandler(void);
+//void Timer2IntHandler(void);
+//void portD1IntHandler(void);
+//void Timer1IntHandler(void);
 void portD1IntHandler(void);
 void Timer1IntHandler(void);
+void Timer2IntHandler(void);
+void enable_interrupt(void);
+//extern uint32_t sysClk;
 
 // global variables
 static COLOR backroundColor = (COLOR) BLACK;
@@ -103,6 +108,4 @@ static uint32_t sysClk;
  y-axis     .. *|              | *
  271 *|______________| *
  272 * * * * * * * * * *
-
-
  */
